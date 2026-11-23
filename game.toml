@@ -1,0 +1,59 @@
+# Autofilled by tools/new_project_layout/probe_disc.py from your legal dump.
+# Review before shipping. Runtime quirks / overlay seeds still need hand work.
+
+[game]
+name = "Elemental Gearbolt"
+id = "SLUS-00654"
+players = 1
+exe = "disc/SLUS_006.54"
+disc = "disc/Elemental Gearbolt (USA).cue"
+discs = ["disc/Elemental Gearbolt (USA).cue"]
+disc_serials = ["SLUS-00654"]
+load_address = "0x80100000"
+entry_pc = "0x80100224"
+text_size = "0x00021000"
+stack_base = "0x801FFFF0"
+
+# Digests are for data Track 01 (first BINARY FILE / TRACK 01).
+[prepare_disc]
+out_dir = "disc"
+bin_name = "Elemental Gearbolt (USA).bin"
+cue_name = "Elemental Gearbolt (USA).cue"
+boot_exe = "SLUS_006.54"
+known_sizes = [533000832]
+known_md5 = [
+  "ff5508c7b567650a15357ecf843c335a",
+]
+known_sha1 = [
+  "c3cd7720515020b55a10f680ab47a7bca1e2fc34",
+]
+known_crc32 = [
+  "8a6d6287",
+]
+
+[recompiler]
+bios_config = "psxrecomp/bios/SCPH1001.toml"
+seeds = "seeds/ghidra_funcs.txt"
+out_dir = "generated"
+strict = true
+
+[runtime]
+openbios = false
+bios_hle = false
+window_title = "Elemental Gearbolt Recompiled"
+memcard_dir = "saves"
+overlay_cache = true
+
+[video]
+renderer = "opengl"
+aspect_ratio = "4:3"
+
+[controller]
+default_mode = "digital"
+
+# Online mount gate: digests + track count + optional TOC fingerprint
+# (see docs/NETPLAY.md).
+[netplay]
+require_cue = true
+required_tracks = 1
+required_disc_fp = "c83a0a2dc68df530053bbc17415b5a0b85eb96d2ce4b2cb1e055439ef331ada6"

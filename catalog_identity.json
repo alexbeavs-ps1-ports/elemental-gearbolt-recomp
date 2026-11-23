@@ -1,0 +1,48 @@
+{
+  "format_version": 1,
+  "game": {
+    "name": "Elemental Gearbolt",
+    "id": "SLUS-00654",
+    "boot_exe": "SLUS_006.54"
+  },
+  "marketing": {
+    "description": "",
+    "publisher": "",
+    "year": "",
+    "region": "USA",
+    "players": 1
+  },
+  "rom_identity": {
+    "cue_name": "Elemental Gearbolt (USA).cue",
+    "bin_name": "Elemental Gearbolt (USA).bin",
+    "track_counts": [
+      1
+    ],
+    "require_cue": true,
+    "data_track": {
+      "size": 533000832,
+      "md5": "ff5508c7b567650a15357ecf843c335a",
+      "sha1": "c3cd7720515020b55a10f680ab47a7bca1e2fc34",
+      "crc32": "8a6d6287"
+    },
+    "disc_fp": "c83a0a2dc68df530053bbc17415b5a0b85eb96d2ce4b2cb1e055439ef331ada6"
+  },
+  "exe": {
+    "load_address": "0x80100000",
+    "entry_pc": "0x80100224",
+    "text_size": "0x00021000",
+    "stack_base": "0x801FFFF0"
+  },
+  "seeds": {
+    "count": 9,
+    "source": "boot_exe_jal"
+  },
+  "warnings": [
+    "cue has only 1 TRACK — Track-01-only dumps fail multi-track netplay/catalog gates; prefer a full Redump cue."
+  ],
+  "notes": [
+    "entry_pc/load_address/text_size/stack_base taken from PS-X EXE header.",
+    "seeds are first-pass boot-EXE JAL targets (+ entry); expect to grow as overlays / runtime paths are discovered.",
+    "required_disc_fp is psxrecomp-toc-v1 (matches runtime DiscIdentity)."
+  ]
+}
